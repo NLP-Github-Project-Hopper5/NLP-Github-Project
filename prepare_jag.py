@@ -104,4 +104,4 @@ def prep_article_data(df, column, extra_words=[], exclude_words=[]):
                extra_words=extra_words,
                exclude_words=exclude_words)
 
-    return df[['language', column, 'clean', 'stemmed', 'lemmatized']]
+    return df[['repo', 'language', column, 'clean', 'stemmed', 'lemmatized']]
