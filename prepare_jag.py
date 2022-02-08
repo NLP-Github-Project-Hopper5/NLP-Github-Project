@@ -77,6 +77,18 @@ def remove_stopwords(string, extra_words=[], exclude_words=[]):
 
     return string_without_stopwords
 
+############### Column Lambdas###############
+
+
+def categorise(row):
+    if row['language'] == 'Swift':
+        return 'swift'
+    elif row['language'] == 'Python':
+        return 'python'
+    elif row['language'] == ('C++' or 'C'):
+        return 'c'
+    return 'other'
+
 ############### PREPARE ARTICLES ############
 
 
@@ -103,5 +115,7 @@ def prep_article_data(df, column, extra_words=[], exclude_words=[]):
         .apply(remove_stopwords,
                extra_words=extra_words,
                exclude_words=exclude_words)
+    # Add categoy column
+    df['target'] = df.apply(lambda row: categorise(row), axis=1)
 
     return df[['repo', 'language', column, 'clean', 'stemmed', 'lemmatized']]
