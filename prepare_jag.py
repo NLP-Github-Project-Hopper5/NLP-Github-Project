@@ -96,6 +96,8 @@ def prep_article_data(df, column, extra_words=[], exclude_words=[]):
     '''
     This function take in a df, the name for a text column with the option to pass lists for extra_words and exclude_words and returns a df with the text article title, original text, stemmed text,lemmatized text, cleaned, tokenized, & lemmatized text with stopwords removed.
     '''
+    df.rename(columns={'readme_contents': 'original'}, inplace=True)
+
     df['clean'] = df[column].apply(basic_clean)\
                             .apply(tokenize)\
                             .apply(remove_stopwords,
@@ -118,4 +120,4 @@ def prep_article_data(df, column, extra_words=[], exclude_words=[]):
     # Add categoy column
     df['target'] = df.apply(lambda row: categorise(row), axis=1)
 
-    return df[['repo', 'language', column, 'clean', 'stemmed', 'lemmatized']]
+    return df[['repo', 'language', 'target', column, 'clean', 'stemmed', 'lemmatized']]
