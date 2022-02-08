@@ -57,9 +57,7 @@ def get_all_repository_urls(url): # repository url
 
 repository_links = get_all_repository_urls('https://github.com/orgs/apple/repositories')
 
-REPOS = ["gocodeup/codeup-setup-script",
-    "gocodeup/movies-application",
-    "torvalds/linux", 'apple/llvm-project'] + repository_links
+REPOS = repository_links
 
 headers = {"Authorization": f"token {github_token}", "User-Agent": github_username}
 
