@@ -1,6 +1,7 @@
 env
 env.py
 *.csv
+JAG-NLP-Github-Project.code-workspace
 
 
 # Byte-compiled / optimized / DLL files
