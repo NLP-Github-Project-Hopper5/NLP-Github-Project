@@ -85,7 +85,7 @@ def categorise(row):
         return 'swift'
     elif row['language'] == 'Python':
         return 'python'
-    elif row['language'] == ('C++' or 'C'):
+    elif (row['language'] == 'C++') or (row['language'] == 'C'):
         return 'c'
     return 'other'
 
@@ -97,6 +97,16 @@ def prep_article_data(df, column, extra_words=[], exclude_words=[]):
     This function take in a df, the name for a text column with the option to pass lists for extra_words and exclude_words and returns a df with the text article title, original text, stemmed text,lemmatized text, cleaned, tokenized, & lemmatized text with stopwords removed.
     '''
     df.rename(columns={'readme_contents': 'original'}, inplace=True)
+
+    # Manually coreect some of the naans
+    # let's override the languages with the observations noted
+    df.language.loc[0] = 'LLVM'
+    df.language.loc[13] = 'JavaScript'
+    df.language.loc[14] = 'C'
+    df.language.loc[83] = 'Swift'
+    df.language.loc[139] = 'Swift'
+    df.language.loc[145] = 'Swift'
+    df.language.loc[149] = 'Swift'
 
     df['clean'] = df[column].apply(basic_clean)\
                             .apply(tokenize)\
@@ -117,6 +127,7 @@ def prep_article_data(df, column, extra_words=[], exclude_words=[]):
         .apply(remove_stopwords,
                extra_words=extra_words,
                exclude_words=exclude_words)
+
     # Add categoy column
     df['target'] = df.apply(lambda row: categorise(row), axis=1)
 
