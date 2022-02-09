@@ -14,8 +14,10 @@ def basic_clean(string):
     article = string.lower()
     article = unicodedata.normalize('NFKD', article)\
     .encode('ascii', 'ignore')\
-    .decode('utf-8', 'ignore')
-    article = re.sub(r'[^\w\s]', '', article)
+    .decode('utf-8', 'ignore')\
+    .replace("\n", " ")\
+    .replace("\t*", "")
+    article = re.sub(r'[^\w\s]', ' ', article)
    
     return article
 
@@ -38,7 +40,9 @@ def lemmatize(string):
     article = ' '.join(lemmas)
     
     return article
-    
+
+#extra_words = ['the', 'to', 'a', 'and', 'of', 'in', 'for', 'is']
+
 def remove_stopwords(string, extra_words = [], exclude_words = []):
     stopword_list = stopwords.words('english')
     stopword_list = set(stopword_list) - set(exclude_words)
