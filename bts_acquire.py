@@ -144,7 +144,7 @@ def scrape_github_data() -> List[Dict[str, str]]:
     Loop through all of the repos and process them. Returns the processed data.
     """
     return [process_repo(repo) for repo in REPOS]
-print('Scraping complete.)
+print('Scraping complete.')
 
 if __name__ == "__main__":
     data = scrape_github_data()
