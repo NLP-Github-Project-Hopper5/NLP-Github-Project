@@ -6,7 +6,7 @@ Here we will use natural language processing in order to predict coding language
 
 ## Authors
 
-- [@joannblaraj](https://github.com/joann-balraj)
+- [@joannbalraj](https://github.com/joann-balraj)
 - [@jaredgodar](https://github.com/Jared-Godar)
 - [@davidrodriguez](https://github.com/david-rodriguez-siller)
 - [@brentschriver](https://github.com/brentschriver)
