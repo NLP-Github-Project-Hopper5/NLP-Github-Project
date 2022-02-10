@@ -125,6 +125,29 @@ Accurately predict the coding language of a Github repository based on the text 
 
 ## Key Findings
 
+- Our best performing model (without overfitting) was KNN with a K of 4.
+- This model was 77% accurate on the out of sample data representing a 63% improvement from baseline.
+- Many of these models are prone to overfitting
+  - This is likely a function of our relatively small number of READMEs (147).
+
 ---
 
 ## Conclusions
+
+- We were able to successfully deploy a NLP model that improved classification 63%.
+- Our number of READMEs is probably lower than optimal - revisiting this approach with more files would likely increase performance.
+
+---
+
+## Future Directions
+
+- We could potentially look for a similar company's repository to increase the number of README files.
+- ome of the models that were overfit may prove useful or better than our current best performing model with continued hyperparameter tuning.
+- There was an imbalance in the categories in training (47%/26%/16%/11%)
+  - Some type of oversampeling technique may be helpful in improving models
+- We should look at the misclassified items in out final test and see what the actual language is in order to see if any of the 'other' langues are disproportionately responsible for mismatches.
+
+---
+
+
+### Thank you for your time and attention.
