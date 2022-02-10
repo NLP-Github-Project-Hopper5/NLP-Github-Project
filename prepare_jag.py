@@ -97,7 +97,7 @@ def prep_article_data(df, column, extra_words=[], exclude_words=[]):
     This function take in a df, the name for a text column with the option to pass lists for extra_words and exclude_words and returns a df with the text article title, original text, stemmed text,lemmatized text, cleaned, tokenized, & lemmatized text with stopwords removed.
     '''
     df.rename(columns={'readme_contents': 'original'}, inplace=True)
-
+    print("Renamed 'readme_content' column to 'original'")
     # Manually coreect some of the naans
     # let's override the languages with the observations noted
     df.language.loc[0] = 'LLVM'
@@ -107,19 +107,20 @@ def prep_article_data(df, column, extra_words=[], exclude_words=[]):
     df.language.loc[139] = 'Swift'
     df.language.loc[145] = 'Swift'
     df.language.loc[149] = 'Swift'
-
+    print('Manually assigned seven languages to null files.')
     df['clean'] = df[column].apply(basic_clean)\
                             .apply(tokenize)\
                             .apply(remove_stopwords,
                                    extra_words=extra_words,
                                    exclude_words=exclude_words)
-
+    print('Added a basic clean column lowercaseing and removing special characters')
     df['stemmed'] = df[column].apply(basic_clean)\
         .apply(tokenize)\
         .apply(stem)\
         .apply(remove_stopwords,
                extra_words=extra_words,
                exclude_words=exclude_words)
+    print('Added stemmed column with tokenized words and stopwords removed')
 
     df['lemmatized'] = df[column].apply(basic_clean)\
         .apply(tokenize)\
@@ -127,8 +128,13 @@ def prep_article_data(df, column, extra_words=[], exclude_words=[]):
         .apply(remove_stopwords,
                extra_words=extra_words,
                exclude_words=exclude_words)
+    print('Added lemmatized column with lemmatized words and stopwords removed')
 
+    # Remove four fows without readme files
+    df.drop(df.index[[114, 135, 144, 150]], inplace=True)
+    print('Dropped four rows with missing README files')
     # Add categoy column
     df['target'] = df.apply(lambda row: categorise(row), axis=1)
-
+    print('Added column with language target category')
+    print('Data preparation complete')
     return df[['repo', 'language', 'target', column, 'clean', 'stemmed', 'lemmatized']]
