@@ -50,6 +50,15 @@ Accurately predict the coding language of a Github repository based on the text 
 
 ## Data Dictionary
 
+| Feature                 | Datatype                         | Definition                                                 |
+|:------------------------|:---------------------------------|:-----------------------------------------------------------|
+| language                | 146 non-null: object             | The predominant programming language used in the repository|
+| original/readme_contents| 146 non-null: object             | Original readme content of the scraped repository          |
+| clean                   | 146 non-null: object             | The cleaned version of the readme                          |
+| stemmed                 | 146 non-null: object             | The cleaned, stemmed version of the readme                 |
+| lemmatized              | 146 non-null: object             | The cleaned, lemmatized version of the readme              |
+| repo                    | 146 non-null: object             | The name of the scraped repository                         |
+
 ---
 
 ## Steps to Reproduce
