@@ -1,6 +1,6 @@
 # NLP-Github-Project
 
-Here we will use natural language processing in order to predict coding language of a Github repository based on the text of the README.md file.
+Here we will use natural language processing in order to predict coding language all Apple Github repositories based on the text of the README.md file.
 
 ---
 ![apple_github](apple_github.png)
