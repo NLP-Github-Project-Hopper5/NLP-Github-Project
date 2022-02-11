@@ -64,11 +64,11 @@ Accurately predict the coding language of a Github repository based on the text 
 
 ## Steps to Reproduce
 
-- [x] Read README.md.
-- [ ] Clone repository to your local environment.
-- [ ] Open requirements.txt to confirm you have the requisite libraries installed.
+- [x] Read the `README.md`.
+- [ ] Clone this repository to your local environment.
+- [ ] Open the `requirements.txt` to confirm you have the required libraries installed.
 - [ ] Ensure your `.gitignore` file contains `env.py`.
-- [ ] Ensure you have an `env.py` file with your Github API token and Github username.
+- [ ] Ensure you have an `env.py` file with your Github API token and Github username if you are going to attempt to run any of the `acquire.py` files. (A cached `data.json` file is available should you want to just load it and get going.)
 - [ ] Run final report notebook.
 
 ---
