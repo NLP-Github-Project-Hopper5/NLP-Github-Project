@@ -27,8 +27,8 @@ Accurately predict the coding language of a Github repository based on the text 
 
 **DELIVERABLES:**
 
-- [ ] A well-documented Jupyter notebook that contains a report of your analysis, and link to that notebook.
-- [ ] A slideshow suitable for a general audience that summarizes your findings.
+- [x] A well-documented [Jupyter notebook](https://github.com/NLP-Github-Project-Hopper5/NLP-Github-Project/blob/main/final_notebbok.ipynb) that contains a report of your analysis, and link to that notebook.
+- [x] A [slideshow](https://docs.google.com/presentation/d/1M8jFSjrK3vIE0XS-CTOQJWhhJRG26yVwSvqaWec_C1U/edit?usp=sharing) suitable for a general audience that summarizes your findings.
 - Include well-labeled visualizations in your slides.
 - [x] Link to the [team Trello board.](https://trello.com/b/dChAeebt/nlp-project)
 - [ ] A 5-minute presentation. Each team member should present a portion of the presentation.
@@ -45,6 +45,16 @@ Accurately predict the coding language of a Github repository based on the text 
 4. What types of models are most accurate?
    1. Underlying Data: Bag of Words, vs. scored words?
    2. Assess various classification algorithms.
+
+---
+
+## Initial Hypotheses
+
+1. There will be language-specific words overrepresented in subsets of languages
+   1. Perhaps the language name will appear more in the `README`.
+   2. There will likely be language-specific functional words of high predictive value
+2. Bigrams and higher order n-grams could be good modeling features.
+3. We will probably have to custom, coding-specific stopwords that are not part of a default natural language list, but will appear in all of the `README`s and be of low value. (i.e, code, data, etc.)
 
 ---
 
