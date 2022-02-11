@@ -65,7 +65,6 @@ Accurately predict the coding language of a Github repository based on the text 
 | repo                    | 147 non-null: object             | The name of the scraped repository                         |
 | language                | 146 non-null: object             | The predominant programming language used in the repository|
 | target                  | 147 non-null: object             | Target variable modified to include the most common languages and lumping less occurring languages into category 'other'.  
-
 | original                | 147 non-null: object             | Original content of `README.md` file         |
 | clean                   | 147 non-null: object             | The cleaned version of the readme (lowercase, normalize unicode, removed anything not a letter, number, whitespace, or single quote, tokenized, stopwords removed)                       |
 | stemmed                 | 147 non-null: object             | The cleaned text stemmed readme                 |
