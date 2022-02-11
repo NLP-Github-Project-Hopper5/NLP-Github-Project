@@ -62,13 +62,15 @@ Accurately predict the coding language of a Github repository based on the text 
 
 | Feature                 | Datatype                         | Definition                                                 |
 |:------------------------|:---------------------------------|:-----------------------------------------------------------|
-| language                | 146 non-null: object             | The predominant programming language used in the repository|
-| original/readme_contents| 147 non-null: object             | Original readme content of the scraped repository          |
-| target                  | 147 non-null: object             | Target variable modified to include the most common languages and lumping less occurring languages into category 'other'.  
-| clean                   | 147 non-null: object             | The cleaned version of the readme                          |
-| stemmed                 | 147 non-null: object             | The cleaned, stemmed version of the readme                 |
-| lemmatized              | 147 non-null: object             | The cleaned, lemmatized version of the readme              |
 | repo                    | 147 non-null: object             | The name of the scraped repository                         |
+| language                | 146 non-null: object             | The predominant programming language used in the repository|
+| target                  | 147 non-null: object             | Target variable modified to include the most common languages and lumping less occurring languages into category 'other'.  
+
+| original                | 147 non-null: object             | Original content of `README.md` file         |
+| clean                   | 147 non-null: object             | The cleaned version of the readme (lowercase, normalize unicode, removed anything not a letter, number, whitespace, or single quote, tokenized, stopwords removed)                       |
+| stemmed                 | 147 non-null: object             | The cleaned text stemmed readme                 |
+| lemmatized              | 147 non-null: object             | The cleaned text lemmatized             |
+
 
 ---
 
@@ -78,6 +80,7 @@ Accurately predict the coding language of a Github repository based on the text 
 - [ ] Clone this repository to your local environment.
 - [ ] Open the `requirements.txt` to confirm you have the required libraries installed.
 - [ ] Ensure your `.gitignore` file contains `env.py`.
+- [ ] `pip install bioinfokit` to get the module for stats testing
 - [ ] Ensure you have an `env.py` file with your Github API token and Github username if you are going to attempt to run any of the `acquire.py` files. (A cached `data.json` file is available should you want to just load it and get going.)
 - [ ] Run final report notebook.
 
