@@ -86,14 +86,14 @@ Accurately predict the coding language of a Github repository based on the text 
    5. Remove stopwords
    6. Produce a dataframe with the original and cleaned text.
    7. Split data:
-      1. Train, validate test.
+      1. Train, validate, test.
       2. Separate x/y features / target (language).
 3. **Explore**
    1. Look at the languages represented.
    2. Determine how many categories to have (including an `other` category for infrequently used langages).
    3. Separate the overall corpus into word lists for each language class.
    4. Look at the frequency of words in each list to determine unique words or words with high predictive value.
-   5. Vizualize most frequent words by language.
+   5. Visualize most frequent words by language.
       1. Proportions by language for common words
       2. Word Clouds
    6. Examine bigrams and other n-grams.
@@ -149,5 +149,4 @@ Accurately predict the coding language of a Github repository based on the text 
 
 ---
 
-
-### Thank you for your time and attention.
+# Thank you for your time and attention
